@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Sarah Mitchell - Premier Real Estate Agent | Find Your Dream Home</title>
+<style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .header {
+            background: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #2563eb;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: #64748b;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-menu a:hover {
+            color: #2563eb;
+        }
+
+        .hero-section {
+            background: linear-gradient(rgba(37, 99, 235, 0.8), rgba(37, 99, 235, 0.8)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect width="1200" height="600" fill="%23f1f5f9"/><rect x="100" y="100" width="300" height="400" fill="%23e2e8f0" rx="8"/><rect x="450" y="150" width="250" height="300" fill="%23cbd5e1" rx="8"/><rect x="750" y="120" width="350" height="380" fill="%23e2e8f0" rx="8"/><circle cx="250" cy="50" r="30" fill="%23fbbf24"/></svg>');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            color: white;
+            text-align: center;
+            margin-top: 80px;
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero-content .subtitle {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: #fbbf24;
+            color: #1f2937;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(251, 191, 36, 0.3);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(251, 191, 36, 0.4);
+        }
+
+        .about-section {
+            padding: 5rem 0;
+            background: #f8fafc;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .agent-photo {
+            width: 100%;
+            max-width: 300px;
+            height: 400px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .about-text h2 {
+            font-size: 2.5rem;
+            color: #1e293b;
+            margin-bottom: 1rem;
+        }
+
+        .about-text .tagline {
+            font-size: 1.2rem;
+            color: #2563eb;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+
+        .about-text p {
+            color: #64748b;
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            line-height: 1.7;
+        }
+
+        .credentials {
+            display: flex;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .credential {
+            text-align: center;
+        }
+
+        .credential-number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #2563eb;
+        }
+
+        .credential-label {
+            font-size: 0.9rem;
+            color: #64748b;
+            margin-top: 0.5rem;
+        }
+
+        .lead-form-section {
+            background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+            padding: 5rem 0;
+            color: white;
+        }
+
+        .form-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+            backdrop-filter: blur(10px);
+        }
+
+        .form-header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+
+        .form-header h2 {
+            color: #1e293b;
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .form-header p {
+            color: #64748b;
+            font-size: 1.1rem;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group.full-width {
+            grid-column: 1 / -1;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #374151;
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid #e5e7eb;
+            border-radius: 10px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            background: white;
+            color: #1f2937;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #2563eb;
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+        }
+
+        .checkbox-group {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            margin-bottom: 2rem;
+        }
+
+        .checkbox-group input[type="checkbox"] {
+            width: auto;
+            margin-top: 0.25rem;
+        }
+
+        .checkbox-group label {
+            font-size: 0.9rem;
+            color: #64748b;
+            line-height: 1.5;
+        }
+
+        .submit-button {
+            width: 100%;
+            background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+            color: white;
+            padding: 1.25rem;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .submit-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(37, 99, 235, 0.3);
+        }
+
+        .services-section {
+            padding: 5rem 0;
+            background: white;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .service-card {
+            background: #f8fafc;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .service-icon {
+            width: 60px;
+            height: 60px;
+            background: #2563eb;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            color: white;
+            font-size: 1.5rem;
+        }
+
+        .contact-section {
+            background: #1e293b;
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin-top: 2rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-menu {
+                display: none;
+            }
+
+            .contact-info {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .credentials {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+<header class="header">
+<div class="nav-container">
+<div class="logo">Sarah Mitchell</div>
+<nav class="nav-menu">
+<a href="#home">Home</a>
+<a href="#about">About</a>
+<a href="#services">Services</a>
+<a href="#contact">Contact</a>
+</nav>
+</div>
+</header>
+<section class="hero-section" id="home">
+<div class="hero-content">
+<h1>Find Your Dream Home in Tampa Bay</h1>
+<p class="subtitle">Luxury homes, expert guidance, exceptional results</p>
+<a class="cta-button" href="#search">Start Your Home Search</a>
+</div>
+</section>
+<section class="about-section" id="about">
+<div class="container">
+<div class="about-content">
+<div class="agent-photo"><img alt="Sarah Mitchell" src="images/sarah-mitchell.png" style="width:100%; height:100%; object-fit:cover; border-radius:15px;"/></div>
+<div class="about-text">
+<h2>Meet Sarah Mitchell</h2>
+<p class="tagline">With over 12 years of experience in Tampa Bay’s vibrant real estate market, I’ve helped hundreds of families find their perfect home. My commitment to personalized service and deep market knowledge ensures you’ll have the best possible experience whether you're buying or selling.</p>
+<p>I specialize in Seminole, St. Petersburg, and Clearwater neighborhoods, with expertise in waterfront homes, condos, and investment properties.</p>
+<p>I specialize in Lincoln Park, Gold Coast, and River North neighborhoods, with expertise in luxury condos, single-family homes, and investment properties.</p>
+<div class="credentials">
+<div class="credential">
+<div class="credential-number">250+</div>
+<div class="credential-label">Homes Sold</div>
+</div>
+<div class="credential">
+<div class="credential-number">98%</div>
+<div class="credential-label">Client Satisfaction</div>
+</div>
+<div class="credential">
+<div class="credential-number">$85M+</div>
+<div class="credential-label">Sales Volume</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="lead-form-section" id="search">
+<div class="container">
+<div class="form-container">
+<div class="form-header">
+<h2>Find Your Perfect Home</h2>
+<p>Tell me about your dream home and I'll find the best matches for you</p>
+</div>
+<form id="homeSearchForm">
+<div class="form-grid">
+<div class="form-group">
+<label for="firstName">First Name *</label>
+<input id="firstName" name="firstName" required="" type="text"/>
+</div>
+<div class="form-group">
+<label for="lastName">Last Name *</label>
+<input id="lastName" name="lastName" required="" type="text"/>
+</div>
+</div>
+<div class="form-grid">
+<div class="form-group">
+<label for="email">Email Address *</label>
+<input id="email" name="email" required="" type="email"/>
+</div>
+<div class="form-group">
+<label for="phone">Phone Number *</label>
+<input id="phone" name="phone" required="" type="tel"/>
+</div>
+</div>
+<div class="form-grid">
+<div class="form-group">
+<label for="propertyType">Property Type</label>
+<select id="propertyType" name="propertyType">
+<option value="">Select Property Type</option>
+<option value="single-family">Single Family Home</option>
+<option value="condo">Condo/Apartment</option>
+<option value="townhouse">Townhouse</option>
+<option value="multi-family">Multi-Family</option>
+<option value="land">Land/Lot</option>
+</select>
+</div>
+<div class="form-group">
+<label for="priceRange">Price Range</label>
+<select id="priceRange" name="priceRange">
+<option value="">Select Price Range</option>
+<option value="under-300k">Under $300,000</option>
+<option value="300k-500k">$300,000 - $500,000</option>
+<option value="500k-750k">$500,000 - $750,000</option>
+<option value="750k-1m">$750,000 - $1,000,000</option>
+<option value="1m-1.5m">$1,000,000 - $1,500,000</option>
+<option value="over-1.5m">Over $1,500,000</option>
+</select>
+</div>
+</div>
+<div class="form-grid">
+<div class="form-group">
+<label for="bedrooms">Bedrooms</label>
+<select id="bedrooms" name="bedrooms">
+<option value="">Any</option>
+<option value="1">1+</option>
+<option value="2">2+</option>
+<option value="3">3+</option>
+<option value="4">4+</option>
+<option value="5">5+</option>
+</select>
+</div>
+<div class="form-group">
+<label for="bathrooms">Bathrooms</label>
+<select id="bathrooms" name="bathrooms">
+<option value="">Any</option>
+<option value="1">1+</option>
+<option value="1.5">1.5+</option>
+<option value="2">2+</option>
+<option value="2.5">2.5+</option>
+<option value="3">3+</option>
+<option value="4">4+</option>
+</select>
+</div>
+</div>
+<div class="form-group full-width">
+<label for="neighborhoods">Preferred Neighborhoods</label>
+<input id="neighborhoods" name="neighborhoods" placeholder="e.g., Lincoln Park, Gold Coast, River North" type="text"/>
+</div>
+<div class="form-group full-width">
+<label for="timeline">When are you looking to buy?</label>
+<select id="timeline" name="timeline">
+<option value="">Select Timeline</option>
+<option value="immediately">Ready to buy now</option>
+<option value="1-3-months">1-3 months</option>
+<option value="3-6-months">3-6 months</option>
+<option value="6-12-months">6-12 months</option>
+<option value="just-looking">Just looking/researching</option>
+</select>
+</div>
+<div class="form-group full-width">
+<label for="financing">Financing Status</label>
+<select id="financing" name="financing">
+<option value="">Select Status</option>
+<option value="pre-approved">Pre-approved for mortgage</option>
+<option value="need-preapproval">Need mortgage pre-approval</option>
+<option value="cash-buyer">Cash buyer</option>
+<option value="exploring-options">Exploring financing options</option>
+</select>
+</div>
+<div class="form-group full-width">
+<label for="mustHaves">Must-Have Features</label>
+<textarea id="mustHaves" name="mustHaves" placeholder="Tell me about your must-have features (parking, outdoor space, modern kitchen, etc.)" rows="3"></textarea>
+</div>
+<div class="checkbox-group">
+<input id="currentlyWorking" name="currentlyWorking" type="checkbox"/>
+<label for="currentlyWorking">I am currently working with another real estate agent</label>
+</div>
+<div class="checkbox-group">
+<input checked="" id="newsletter" name="newsletter" type="checkbox"/>
+<label for="newsletter">Yes, I'd like to receive market updates and new listing notifications</label>
+</div>
+<button class="submit-button" type="submit">
+                        Find My Dream Home
+                    </button>
+</form>
+</div>
+</div>
+</section>
+<section class="services-section" id="services">
+<div class="container">
+<h2 style="text-align: center; font-size: 2.5rem; color: #1e293b; margin-bottom: 1rem;">My Services</h2>
+<p style="text-align: center; color: #64748b; font-size: 1.1rem;">Comprehensive real estate services tailored to your needs</p>
+<div class="services-grid">
+<div class="service-card">
+<div class="service-icon">🏠</div>
+<h3 style="color: #1e293b; margin-bottom: 1rem;">Home Buying</h3>
+<p style="color: #64748b;">Expert guidance through every step of the home buying process, from search to closing.</p>
+</div>
+<div class="service-card">
+<div class="service-icon">💰</div>
+<h3 style="color: #1e293b; margin-bottom: 1rem;">Home Selling</h3>
+<p style="color: #64748b;">Strategic marketing and pricing to sell your home quickly and for the best price.</p>
+</div>
+<div class="service-card">
+<div class="service-icon">🏢</div>
+<h3 style="color: #1e293b; margin-bottom: 1rem;">Investment Properties</h3>
+<p style="color: #64748b;">Find profitable investment opportunities and build your real estate portfolio.</p>
+</div>
+</div>
+</div>
+</section>
+<section class="contact-section" id="contact">
+<div class="container">
+<h2 style="font-size: 2rem; margin-bottom: 1rem;">Ready to Get Started?</h2>
+<p>Contact me today for a free consultation</p>
+<div class="contact-info">
+<div class="contact-item">
+<span>📞</span>
+<span>(312) 555-0142</span>
+</div>
+<div class="contact-item">
+<span>✉️</span>
+<span>sarah@tampabayhomes.com</span>
+</div>
+<div class="contact-item">
+<span>📍</span>
+<span>Tampa Bay, FL</span>
+</div>
+</div>
+</div>
+</section>
+<script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Form submission handling
+        document.getElementById('homeSearchForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Collect all form data
+            const formData = new FormData(this);
+            const leadData = {};
+            
+            // Convert FormData to regular object
+            for (let [key, value] of formData.entries()) {
+                leadData[key] = value;
+            }
+            
+            // Add timestamp and lead source
+            leadData.timestamp = new Date().toISOString();
+            leadData.leadSource = 'Website - Home Search Form';
+            leadData.agentName = 'Sarah Mitchell';
+            leadData.agentEmail = 'sarah@chicagohomes.com';
+            
+            // Visual feedback
+            const submitBtn = this.querySelector('.submit-button');
+            const originalText = submitBtn.textContent;
+            
+            submitBtn.textContent = 'Searching Properties...';
+            submitBtn.style.background = 'linear-gradient(135deg, #10b981 0%, #059669 100%)';
+            submitBtn.disabled = true;
+            
+            // Log the captured lead data (this is where you'd send to your backend/n8n)
+            console.log('=== LEAD CAPTURED ===');
+            console.log('Lead Data:', JSON.stringify(leadData, null, 2));
+            console.log('=====================');
+            
+            // Simulate processing time
+            setTimeout(() => {
+                submitBtn.textContent = '✓ Request Submitted Successfully!';
+                
+                // Show success message
+                alert(`Thank you ${leadData.firstName}! I've received your home search request and will be in touch within 15 minutes with personalized property recommendations.`);
+                
+                // Reset form after success
+                setTimeout(() => {
+                    this.reset();
+                    submitBtn.textContent = originalText;
+                    submitBtn.style.background = 'linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%)';
+                    submitBtn.disabled = false;
+                }, 3000);
+                
+            }, 2000);
+        });
+
+        // Add floating label effect
+        const formInputs = document.querySelectorAll('input, select, textarea');
+        formInputs.forEach(input => {
+            input.addEventListener('focus', function() {
+                this.parentElement.style.transform = 'scale(1.02)';
+                this.parentElement.style.transition = 'transform 0.2s ease';
+            });
+            
+            input.addEventListener('blur', function() {
+                this.parentElement.style.transform = 'scale(1)';
+            });
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('.header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(255, 255, 255, 0.95)';
+                header.style.backdropFilter = 'blur(10px)';
+            } else {
+                header.style.background = '#fff';
+                header.style.backdropFilter = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
